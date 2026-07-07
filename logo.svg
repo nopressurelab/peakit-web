@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="120" viewBox="0 0 480 120" role="img" aria-labelledby="title desc">
+  <title id="title">peakit Logo</title>
+  <desc id="desc">Two mountain peaks and the peakit wordmark</desc>
+  <defs>
+    <linearGradient id="peakGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#FFB247"/>
+      <stop offset="100%" stop-color="#F27B00"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="transparent"/>
+  <!-- Mountain mark: two overlapping peaks -->
+  <g transform="translate(28, 24)">
+    <!-- back peak -->
+    <polygon points="0,72 32,10 64,72" fill="url(#peakGradient)"/>
+    <!-- back peak snow cap -->
+    <polygon points="32,10 24,26 40,26" fill="#FAFAFC"/>
+    <!-- front peak -->
+    <polygon points="36,72 68,28 96,72" fill="#F27B00"/>
+    <!-- front peak snow cap -->
+    <polygon points="68,28 62,42 74,42" fill="#FAFAFC"/>
+    <!-- baseline -->
+    <rect x="-2" y="72" width="100" height="3" fill="#F27B00" opacity="0.35"/>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(158, 82)">
+    <text x="0" y="0"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+          font-weight="700" font-size="56" fill="#1A1C2C">peak</text>
+    <text x="184" y="0"
+          font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+          font-weight="700" font-size="56" fill="#F27B00">it</text>
+  </g>
+</svg>

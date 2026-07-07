@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>peakit — Plan Your Day In The Mountains</title>
+    <meta name="description" content="peakit is an alpine planning app for hikers and mountaineers. Weather, slope shading, sun timing, offline maps, GPX routes and off-grid mesh — no accounts, no tracking." />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <style>
+      /* Brand palette (peakit) */
+      :root {
+        --bg:#ECEEF1;        /* Alpine gray */
+        --fg:#1A1C2C;        /* Alpine ink */
+        --muted:#6B7280;
+        --accent:#FF9500;    /* peakit orange */
+        --accent2:#FFB247;   /* Sunrise */
+        --deep:#F27B00;      /* Sunset */
+        --card:#F5F6F8;      /* Soft gray card */
+        --border:#D9DCE1;
+        --ridge:#2C4A6E;     /* Alpine ridge */
+        --sky:#0F1A2E;       /* Alpine night */
+      }
+      html,body { height:100%; margin:0; font:16px/1.5 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--fg); }
+      .wrap { max-width:860px; margin:0 auto; padding:0 20px 48px; }
+      header {
+        padding:80px 24px 40px;
+        color:var(--fg);
+      }
+      /* All hero text is dark ink / muted-slate so it reads on the light
+         gray page background. Orange is reserved for the logo mark and the
+         primary CTA. */
+      header h1 { margin:0 0 8px; font-size:32px; color:var(--fg); }
+      header p { margin:0; color:#4A4E5A; max-width:520px; font-size:17px; }
+      header .card { margin-top:24px; }
+      .cta { margin:28px 0 40px; display:flex; gap:12px; flex-wrap:wrap; }
+      .btn {
+        display:inline-block;
+        padding:12px 18px;
+        border-radius:10px;
+        text-decoration:none;
+        color:#FFFFFF;
+        background:linear-gradient(135deg, var(--accent2), var(--accent));
+        font-weight:600;
+        border:0;
+        box-shadow:0 8px 20px rgba(242, 123, 0, 0.22);
+      }
+      .btn.secondary {
+        background:transparent;
+        color:var(--fg);
+        border:1px solid var(--ridge);
+        box-shadow:none;
+      }
+      .btn.disabled {
+        cursor:default;
+        background:var(--ridge);
+        box-shadow:0 6px 16px rgba(26, 28, 44, 0.18);
+      }
+      .btn.secondary:hover { background:rgba(44, 74, 110, 0.06); }
+      .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:16px; }
+      .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; }
+      .card h3 { margin-top:0; }
+      .feature-title { display:flex; align-items:center; gap:8px; margin-bottom:6px; }
+      .feature-title span { font-size:20px; }
+      footer { margin-top:48px; color:var(--muted); font-size:14px; }
+      a, a:visited { color:var(--deep); }
+      a:hover { color:var(--accent); text-decoration:underline; }
+      a:active { color:#8A4400; }
+      p, li { color:#3F4045; }
+      h2, h3 { color:var(--ridge); }
+      .pill { display:inline-block; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; padding:3px 8px; border-radius:999px; background:rgba(0,0,0,0.06); color:var(--muted); vertical-align:middle; margin-left:6px; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <img src="logo.svg" alt="peakit" width="280" height="88" style="display:block; max-width:100%; height:auto;" />
+        <h1 style="position:absolute; left:-9999px;">peakit</h1>
+        <p>Plan your day in the mountains. peakit brings weather, slope shading, sun timing, offline maps, GPX routes and off-grid mesh comms into one privacy-friendly app — no accounts, no tracking.</p>
+        <div class="cta">
+          <a class="btn disabled" href="#" aria-label="App Store link — coming soon">Coming soon to the App Store</a>
+          <a class="btn secondary" href="privacy.html">Privacy Policy</a>
+        </div>
+        <div class="card">
+          <h3>Why peakit</h3>
+          <p>peakit is a planning aid for hikers, ski tourers and mountaineers. Bring together the forecast, slope angle &amp; aspect, sun &amp; shadow, and the trails that get you there — all in one map you can take offline.</p>
+          <p>Upgrade to <strong>peakit Pro</strong> for the 7-day forecast, unlimited offline regions, sun &amp; shadow overlay, route elevation profiles, GPX export, Meshtastic group tracking and quick access to EAWS avalanche bulletins.</p>
+        </div>
+      </header>
+
+      <section class="grid">
+        <div class="card">
+          <div class="feature-title"><span>🗺️</span><h3>Outdoor maps, fully offline</h3></div>
+          <p>MapTiler outdoor tiles with contour lines &amp; hillshading. Download regions ahead of time — the map, slope shading and forecast all work offline in the field.</p>
+        </div>
+        <div class="card">
+          <div class="feature-title"><span>🌤️</span><h3>Forecast with elevation snap</h3></div>
+          <p>Weather from Open-Meteo, snapped to the elevation of the point you tap so you're reading the summit forecast, not the valley one.</p>
+        </div>
+        <div class="card">
+          <div class="feature-title"><span>▲</span><h3>Slope shading &amp; sun<span class="pill">Pro</span></h3></div>
+          <p>Avalanche-scale slope-angle colour ramp, plus per-face sun &amp; shadow with a time slider. Understand the terrain and the light before you commit.</p>
+        </div>
+        <div class="card">
+          <div class="feature-title"><span>🥾</span><h3>Routes &amp; hiking trails</h3></div>
+          <p>Import GPX, draw a route on the map, or snap between waypoints along real hiking trails via Open Route Service. Hiking network overlay via Waymarked Trails.</p>
+        </div>
+        <div class="card">
+          <div class="feature-title"><span>📡</span><h3>Meshtastic group tracking<span class="pill">Pro</span></h3></div>
+          <p>Pair a Meshtastic node over Bluetooth to see where your party is, share waypoints and message each other — no cell signal required.</p>
+        </div>
+        <div class="card">
+          <div class="feature-title"><span>⚠️</span><h3>Avalanche bulletins<span class="pill">Pro</span></h3></div>
+          <p>Quick access to the current EAWS avalanche bulletin, right from the Layers menu. Always cross-check the official source before backcountry travel.</p>
+        </div>
+      </section>
+
+      <section class="grid" style="margin-top:16px;">
+        <div class="card">
+          <h3>Data sources</h3>
+          <p>Weather from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>. Map tiles &amp; terrain elevation from <a href="https://www.maptiler.com/" target="_blank" rel="noopener">MapTiler</a>. Trails &amp; place search from © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> via <a href="https://overpass-api.de/" target="_blank" rel="noopener">Overpass</a> and <a href="https://waymarkedtrails.org/" target="_blank" rel="noopener">Waymarked Trails</a>. Routing by <a href="https://openrouteservice.org/" target="_blank" rel="noopener">Open Route Service</a>. Avalanche bulletins via EAWS / <a href="https://avalanche.report/" target="_blank" rel="noopener">avalanche.report</a> (CC BY 4.0).</p>
+        </div>
+        <div class="card">
+          <h3>Contact</h3>
+          <p>Questions, bug reports, or a route you want to share? <a href="mailto:help@peakit.io">help@peakit.io</a></p>
+        </div>
+      </section>
+
+      <footer>
+        <p>peakit is a planning aid, not a guide. Weather forecasts are model estimates and mountain conditions can change rapidly. Always check official avalanche bulletins and use your own judgment in the field.</p>
+        <p>© <span id="year"></span> peakit. All rights reserved.</p>
+      </footer>
+    </main>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
