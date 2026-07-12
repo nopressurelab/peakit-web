@@ -3,8 +3,8 @@
 Marketing site for [peakit.io](https://peakit.io) — the alpine planning app.
 
 Static, one-page: hero + feature grid + data-source attribution + privacy
-policy at `/privacy`. Deployed to Netlify via GitHub Actions on every push
-to `main`.
+policy at `/privacy`. Deployed to GitHub Pages via GitHub Actions on every
+push to `main`, served at the custom domain [peakit.io](https://peakit.io).
 
 ## Layout
 
@@ -14,11 +14,11 @@ to `main`.
     ├── logo.svg                          Inline SVG logo (also used for favicon)
     ├── logo.png                          Same, rasterised (drop in when ready)
     ├── apple-touch-icon.png              iOS home-screen icon (drop in)
-    ├── _headers                          Netlify security/cache headers
-    ├── netlify.toml                      Netlify build config
+    ├── CNAME                             Custom domain for GitHub Pages
+    ├── .nojekyll                         Serve files as-is (skip Jekyll)
     ├── .well-known/
     │   └── apple-app-site-association    Universal Links config
-    └── .github/workflows/netlify-deploy.yml
+    └── .github/workflows/pages-deploy.yml
 
 ## Local preview
 
@@ -31,14 +31,21 @@ python3 -m http.server 8000
 
 ## Deploy
 
-The GitHub Action at `.github/workflows/netlify-deploy.yml` deploys
-production on push to `main` and a preview URL for each pull request. Two
-repo secrets are required:
+The GitHub Action at `.github/workflows/pages-deploy.yml` builds and deploys
+to GitHub Pages on every push to `main`. No secrets are required — it uses
+the repo's built-in `GITHUB_TOKEN`.
 
-- `NETLIFY_AUTH_TOKEN`
-- `NETLIFY_SITE_ID`
+One-time setup in the repo settings:
 
-Both are set once in the peakit-web repo settings → Secrets.
+1. **Settings → Pages → Build and deployment → Source:** *GitHub Actions*.
+2. **Settings → Pages → Custom domain:** `peakit.io` (the `CNAME` file
+   already pins this; the setting enables the "Enforce HTTPS" checkbox once
+   the certificate is issued).
+3. Point DNS at GitHub Pages:
+   - Apex `peakit.io` → four `A` records: `185.199.108.153`,
+     `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+     (and/or the matching `AAAA` records for IPv6).
+   - `www.peakit.io` → `CNAME` to `nopressurelab.github.io`.
 
 ## Universal Links
 
