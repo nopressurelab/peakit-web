@@ -69,13 +69,33 @@
       p, li { color:#3F4045; }
       h2, h3 { color:var(--ridge); }
       .pill { display:inline-block; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; padding:3px 8px; border-radius:999px; background:rgba(0,0,0,0.06); color:var(--muted); vertical-align:middle; margin-left:6px; }
+      /* Logo lockup: inline mountain mark + wordmark rendered as real text so
+         it never depends on SVG-embedded fonts (which garble in <img>). */
+      .logo { display:flex; align-items:center; gap:14px; margin:0 0 12px; }
+      .logo svg { flex:0 0 auto; width:56px; height:auto; }
+      .logo .logo-word { font-size:52px; font-weight:800; letter-spacing:-0.01em; line-height:1; color:var(--fg); }
+      .logo .logo-it { color:var(--deep); }
     </style>
   </head>
   <body>
     <main class="wrap">
       <header>
-        <img src="logo.svg" alt="peakit" width="280" height="88" style="display:block; max-width:100%; height:auto;" />
-        <h1 style="position:absolute; left:-9999px;">peakit</h1>
+        <h1 class="logo" aria-label="peakit">
+          <svg viewBox="-4 6 106 74" width="56" height="40" role="img" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="peakGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"  stop-color="#FFB247"/>
+                <stop offset="100%" stop-color="#F27B00"/>
+              </linearGradient>
+            </defs>
+            <polygon points="0,72 32,10 64,72" fill="url(#peakGradient)"/>
+            <polygon points="32,10 24,26 40,26" fill="#FAFAFC"/>
+            <polygon points="36,72 68,28 96,72" fill="#F27B00"/>
+            <polygon points="68,28 62,42 74,42" fill="#FAFAFC"/>
+            <rect x="-2" y="72" width="100" height="3" fill="#F27B00" opacity="0.35"/>
+          </svg>
+          <span class="logo-word">peak<span class="logo-it">it</span></span>
+        </h1>
         <p>Plan your day in the mountains. peakit brings weather, slope shading, sun timing, offline maps, GPX routes and off-grid mesh comms into one privacy-friendly app — no accounts, no tracking.</p>
         <div class="cta">
           <a class="btn disabled" href="#" aria-label="App Store link — coming soon">Coming soon to the App Store</a>
