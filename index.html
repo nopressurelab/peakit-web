@@ -75,6 +75,21 @@
       .logo svg { flex:0 0 auto; width:56px; height:auto; }
       .logo .logo-word { font-size:52px; font-weight:800; letter-spacing:-0.01em; line-height:1; color:var(--fg); }
       .logo .logo-it { color:var(--deep); }
+      /* Screenshot gallery: horizontally-scrolling device shots. */
+      .shots { margin-top:8px; }
+      .shots h2 { margin:0 0 16px; font-size:22px; }
+      .shots-scroll {
+        display:flex; gap:16px; overflow-x:auto;
+        padding:4px 4px 18px; margin:0 -20px; padding-left:20px; padding-right:20px;
+        scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+      }
+      .shots-scroll img {
+        flex:0 0 auto; width:auto; height:540px; max-width:none;
+        border-radius:26px; border:1px solid var(--border);
+        box-shadow:0 12px 30px rgba(26,28,44,0.14);
+        background:var(--card); scroll-snap-align:center;
+      }
+      @media (max-width:600px) { .shots-scroll img { height:72vh; } }
     </style>
   </head>
   <body>
@@ -98,7 +113,7 @@
         </h1>
         <p>Plan your day in the mountains. peakit brings weather, slope shading, sun timing, offline maps, GPX routes and off-grid mesh comms into one privacy-friendly app — no accounts, no tracking.</p>
         <div class="cta">
-          <a class="btn disabled" href="#" aria-label="App Store link — coming soon">Coming soon to the App Store</a>
+          <a class="btn" href="https://apps.apple.com/us/app/peakit-mountains-forecast/id6792371051" aria-label="Download peakit on the App Store">Download on the App Store</a>
           <a class="btn secondary" href="privacy.html">Privacy Policy</a>
         </div>
         <div class="card">
@@ -107,6 +122,17 @@
           <p>Upgrade to <strong>peakit Pro</strong> for the 7-day forecast, unlimited offline regions, sun &amp; shadow overlay, route elevation profiles, GPX export, Meshtastic group tracking and quick access to EAWS avalanche bulletins.</p>
         </div>
       </header>
+
+      <section class="shots" aria-label="App screenshots">
+        <h2>See it in action</h2>
+        <div class="shots-scroll">
+          <img src="/screenshots/01.png" width="1284" height="2778" loading="lazy" alt="peakit app screenshot 1 of 5" />
+          <img src="/screenshots/02.png" width="1284" height="2778" loading="lazy" alt="peakit app screenshot 2 of 5" />
+          <img src="/screenshots/03.png" width="1284" height="2778" loading="lazy" alt="peakit app screenshot 3 of 5" />
+          <img src="/screenshots/04.png" width="1284" height="2778" loading="lazy" alt="peakit app screenshot 4 of 5" />
+          <img src="/screenshots/05.png" width="1284" height="2778" loading="lazy" alt="peakit app screenshot 5 of 5" />
+        </div>
+      </section>
 
       <section class="grid">
         <div class="card">
